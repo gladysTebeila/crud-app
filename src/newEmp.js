@@ -1,33 +1,36 @@
-import React, {useState} from "react";
-import {useHistory} from "react-router-dom"
-import "./newEmployee.css"
+import React, {useState} from "react"
+import "./addEmployee.css"
+function AddEmployee(props){
 
+    const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')
+    const [email, setEmail] = useState('')
 
-function NewEmployee(props){
-    const [firstName, setFirstName]= useState('')
-    const [lastName,setLastName]= useState('')
-    const [email,setEmail]= useState('')
-    
-    let history = useHistory();
+    const add=(()=>{
 
-    const register = (()=>{
+        /*const employee={
+            name:name,
+            surname:surname,
+            email:email,
+        };*/
 
-        props.register(firstName, lastName, email);
-        
+        props.add(name, surname, email);
     })
 
     return(
-        <div className="addEmployees">
-             <h1>New Employee</h1>
-             <h3>First Name</h3>
-            <input type="First Name" onChange={(e)=>setFirstName(e.target.value)}/>
-            <h3>Last Name</h3>
-            <input type="Last Name" onChange={(e)=>setLastName(e.target.value)}/>
-            <h3>Email</h3>
-            <input type="Email" onChange={(e)=>setEmail(e.target.value)}/><br></br><br></br>
+        <div className="container">
 
-            <button style={{width: "100px", height: "40px"}} onClick={register}>AddEmployee</button>
+            <h1 style={{paddingLeft: "5px"}}>New Employee</h1>
+            <p>First Name</p>
+            <input type="text"  placeholder="Enter Name" onChange={(e)=>setName(e.target.value)} />
+            <p>Last Name</p>
+            <input type="text" placeholder="Enter your last name" onChange={(e)=>setSurname(e.target.value)} />
+            <p>Email</p>
+            <input type="email" placeholder="Enter your email" onChange={(e)=>setEmail(e.target.value)} /><br></br>
+
+            <button className="btn" onClick={add}>Add Employee</button>
         </div>
     )
 }
-export default NewEmployee;
+
+export default AddEmployee;
