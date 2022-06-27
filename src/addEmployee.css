@@ -15,11 +15,11 @@ h2{
 
 }
 input{
-    width: 40%;
+    
+    border-color:black;
+    width: 500px;
     height: 30px;
-    border: 0px;
-    border-radius: 10px;
-    justify-content:space-around;
+
 }
 .btn{
     background-color: grey;
@@ -29,3 +29,28 @@ input{
     height: 40px;
     border-radius: 50px;
 }
+
+/*For display.css
+=====================================
+
+.fix{
+    margin-left: 60%;
+    margin-top: -23%;
+}
+
+.heading{
+   
+    display: flex;
+    width: 500px;
+    height: 30px;
+    margin-left: 60%;
+}
+
+.transaction-item{
+    display: flex;
+    background-color:grey;
+    color: black;
+    width: 500px;
+    height: 40px;
+    margin-top: -23%;
+    margin-left: 60%;*/

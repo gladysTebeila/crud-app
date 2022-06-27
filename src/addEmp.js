@@ -1,33 +1,46 @@
 import React from 'react'
 import './display.css'
+import bin from './picture/bin.png'
 
 function DisplayEmployee(props){
+   
+    const close = document.querySelectorAll('td');
+    for (let i=0; i<close.length; i++)
+    {
+        close[i].addEventListener('click', ()=>{
+            close[i].parentElement.style.display = "none";
+        })
+    }
+   
     return(
         <div>
             <div className='fix'>
             <h1>Employee List</h1>
             </div>
           
-            <div className="heading">
-                <p style={{paddingLeft: "12px", paddingTop: "20px"}}>Name</p>
-                <p style={{paddingLeft: "290px", paddingTop: "20px"}}>Surname</p>
-                <p style={{paddingLeft: "290px", paddingTop: "20px"}}>Email</p>
-            </div>
-           {props.list.map((item) => (
-               <div>
-                    <div className="transaction-item">
-                       <div>
-                           <h4 style={{paddingLeft: "12px", paddingTop: "20px"}}>{item.name}</h4>
-                       </div>
-                       <div>
-                           <h4 style={{marginLeft: "290px", paddingTop: "20px"}}>{item.surname}</h4>
-                       </div>
-                       <div>
-                           <h4 style={{paddingLeft: "290px", paddingTop: "20px"}}>{item.email}</h4>
-                       </div>
-                   </div> 
-               </div>
-           ))}
+           <table>
+            <thead>
+                <tr>
+                    <th><h3>Name</h3></th>
+                    <th><h3>Last Name</h3></th>
+                    <th><h3>Email</h3></th>
+                    <th><h3>Action</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                {props.list.map((item)=>(
+                    <tr>
+                        <td>{item.name}</td>
+                        <td>{item.surname}</td>
+                        <td>{item.email}</td>
+                        <td>
+                            <span><button><img style={{width: '45px', height: '45px'}} src={bin} alt="delete"></img></button></span>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+           </table>
+               
         </div>
     );
 }

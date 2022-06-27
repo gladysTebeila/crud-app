@@ -1,22 +1,50 @@
 .fix{
-    margin-left: 60%;
-    margin-top: -23%;
+    margin-top: -21%;
+    margin-left: 50%;
+}
+h1{
+    width: 700px;
 }
 
-.heading{
-   
-    display: flex;
-    width: 500px;
-    height: 30px;
-    margin-left: 60%;
+.EmpList {
+    height: 400px;
+    overflow-y: scroll;
 }
 
-.transaction-item{
-    display: flex;
-    background-color:grey;
-    color: black;
-    width: 500px;
-    height: 40px;
-    margin-top: -23%;
-    margin-left: 60%;
+table {
+    border: 2px solid black;
+    margin-left: 50%;
+}
+
+thead {
+    background:darkslategray;
+    color: white;
+    font-weight: bolder;
+}
+
+
+
+tr:hover {
+    background-color: rgba(0,0,0, 1.0);
+    color: white;
+}
+
+td {
+    width: 180px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.btn-group {
+    display: grid;
+   grid-template-columns: repeat(2, 1fr);
+}
+
+.btn-group button {
+    padding: 5px;
+}
+
+img {
+    width: 25px;
+    height: 25px;
 }
